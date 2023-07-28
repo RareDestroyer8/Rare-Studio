@@ -1,4 +1,4 @@
-let title = document.getElementById("header");a
+let title = document.getElementById("header");  
 let servicesHeader = document.querySelector("#servicesHeader");
 let servicesText = document.querySelector("#servicesText");
 
