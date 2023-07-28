@@ -1,60 +1,3 @@
-
-html{
-  margin: 0;
-  background-color: rgb(255, 255, 255);
-}
-body{
-  -ms-overflow-style: none;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-#redBannerBackground {
-  background-color: #b30027;
-
-  position: absolute;
-  top: 0%;
-  left: 50%;
-  transform: translate(-50%);
-  width: 100%;
-  height: 80%;
-  margin: 0;
-  padding: 0px;
-  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-  z-index: -10;
-}
-
-#test{
-  position: absolute;
-  background-color: black;
-  width: 50px;
-  height: 50px;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%);
-  margin-top: 50px;
-  visibility: hidden;
-}
-
-#header {
-  position: absolute;
-  color: white;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%);
-  font-size: 6rem;
-  text-align: center;
-  margin: 0;
-}
-
-#titleBackground {
-  position: absolute;
-  background-color: #980013;
-  z-index: -5;
-}
-
 #mobileNavButton {
   position: fixed;
   background-color: #e5001b;
@@ -66,25 +9,10 @@ body{
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: #69000c;
-  height: 0.6rem;
-  width: 1rem;
 }
 
-  .navElement {
-
- color: #000000;
-    
-  }
-
-  .navElement::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: ;
-  mix-blend-mode: difference;
+.navElement {
+  color: white;
 }
 
 .mobileNavButtonShow {
@@ -97,8 +25,8 @@ body{
   clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
 }
 .mobileNavButtonHide {
-  width: 5%;
-  height: 5%;
+  width: 7%;
+  height: 7%;
   left: 50%;
   top: 9%;
   transform: translate(-50%);
@@ -106,16 +34,19 @@ body{
   clip-path: circle();
 }
 
-
-
 .mobileNavButtonIconShow {
   transition-duration: 0.15s;
   clip-path: polygon(50% 100%, 0 0, 100% 0);
+  height: 0.6rem;
+  width: 1rem;
 }
 
 .mobileNavButtonIconHide {
   transition-duration: 0.15s;
+
   clip-path: polygon(50% 0%, 0 100%, 100% 100%);
+  height: 0.5rem;
+  width: 0.8rem;
 }
 
 .aboutShown {
@@ -191,49 +122,20 @@ body{
 }
 
 /* Mobile */
-@media (min-width: 0em) and (orientation:portrait) {
-  html {
-    font-size: 15px;
-  }
-
-  #titleBackground {
-    top: -17.5%;
-    left: 0%;
-    height: 70%;
-    width: 100%;
-
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  }
-
+@media (min-width: 0em) and (orientation: portrait) {
   .navElement {
-    
     font-size: 1.7rem;
     position: fixed;
     transition-property: top, left;
   }
 }
 
-/* Desktop - 1024px*/
+@media (min-width: 0em) and (orientation: landscape) {}
+
+
+/* Desktop */
 @media (min-width: 64rem) {
-  html {
-    font-size: 16px;
-  }
-
-  #title {
-    white-space: nowrap;
-  }
-
-  #titleBackground {
-    top: -17.5%;
-    left: -15%;
-    height: 125%;
-    width: 60%;
-
-    clip-path: polygon(12.5% 0, 100% 0%, 87.5% 100%, 0% 100%);
-  }
-
   .navElement {
-    
     font-size: 1.5rem;
     position: fixed;
     transition-property: top, left;

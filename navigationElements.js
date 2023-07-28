@@ -1,4 +1,6 @@
-let title = document.getElementById("header")
+let title = document.getElementById("header");
+let servicesHeader = document.querySelector("#servicesHeader");
+let servicesText = document.querySelector("#servicesText");
 
 var about = document.querySelector("#about");
 var pricing = document.querySelector("#pricing");
@@ -11,20 +13,35 @@ var mobileNavigator = true;
 
 if (window.matchMedia("(min-width: 64rem)").matches) {
   moveNavElements();
-
 } else {
   mobileMenu();
 }
-
-
-
 
 addEventListener("scroll", (e) => {
   if (window.matchMedia("(min-width: 64rem)").matches) {
     moveNavElements();
   }
-      title.style.marginTop = window.scrollY * 1.05 + "px";
-
+  console.log(window.scrollY);
+  title.style.marginTop = window.scrollY * 1.2 + "px";
+  if (window.scrollY < 515) {
+    servicesHeader.style.marginTop = window.scrollY * 1.2 + "px";
+    if (window.scrollY > 380) {
+      if (window.matchMedia("(min-width: 64rem)").matches) {
+        servicesText.style.marginTop = (window.scrollY - 380) * -3 + "px";
+      } else {
+        servicesText.style.marginTop = (window.scrollY - 380) * -3 + 90 + "px";
+      }
+    }
+  } else {
+    servicesHeader.style.marginTop = 515 * 1.2 + "px";
+    
+    
+      if (window.matchMedia("(min-width: 64rem)").matches) {
+        servicesText.style.marginTop = (515 - 380) * -3 + "px";
+      } else {
+        servicesText.style.marginTop = (515 - 380) * -3 + 90 + "px";
+      }
+  }
 });
 
 //Desktop
@@ -36,7 +53,6 @@ function moveNavElements() {
     about.classList.add("aboutEnd");
     pricing.classList.add("pricingEnd");
     contact.classList.add("contactEnd");
-    console.log("1");
   } else {
     about.classList.remove("aboutEnd");
     pricing.classList.remove("pricingEnd");
@@ -52,8 +68,8 @@ function showMenu() {
   mobileNavButton.classList.remove("mobileNavButtonShow");
   mobileNavButtonIcon.classList.remove("mobileNavButtonIconShow");
 
-    mobileNavButton.classList.add("mobileNavButtonHide");
-    mobileNavButtonIcon.classList.add("mobileNavButtonIconHide");
+  mobileNavButton.classList.add("mobileNavButtonHide");
+  mobileNavButtonIcon.classList.add("mobileNavButtonIconHide");
 
   about.classList.remove("aboutHidden");
   pricing.classList.remove("pricingHidden");
