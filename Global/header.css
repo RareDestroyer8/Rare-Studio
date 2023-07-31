@@ -10,12 +10,13 @@
   font-size: 6rem;
   text-align: center;
   margin: 0;
+  z-index: -20;
 }
 
 #headerParallelogram {
   position: absolute;
   background-color: #980013;
-  z-index: -5;
+  z-index: -20;
 }
 
 /* Mobile */

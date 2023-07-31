@@ -13,6 +13,7 @@
 
 .navElement {
   color: white;
+  
 }
 
 .mobileNavButtonShow {
@@ -120,6 +121,7 @@
   top: 12%;
   left: 90%;
 }
+
 
 /* Mobile */
 @media (min-width: 0em) and (orientation: portrait) {

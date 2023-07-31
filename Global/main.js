@@ -1,6 +1,9 @@
-let title = document.getElementById("header");  
+let title = document.getElementById("header");
 let servicesHeader = document.querySelector("#servicesHeader");
 let servicesText = document.querySelector("#servicesText");
+
+let whyUsHeader = document.querySelector("#whyUsHeader");
+let whyUsText = document.querySelector("#whyUsText");
 
 var about = document.querySelector("#about");
 var pricing = document.querySelector("#pricing");
@@ -18,9 +21,18 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 }
 
 addEventListener("scroll", (e) => {
+      if (window.scrollY > 1100) {
+        whyUsHeader.classList.remove("whyUsHeaderStart");
+
+        whyUsHeader.classList.add("whyUsHeaderTransition");
+
+        whyUsTextApprear();
+      }
   if (window.matchMedia("(min-width: 64rem)").matches) {
     moveNavElements();
+
   }
+
   console.log(window.scrollY);
   title.style.marginTop = window.scrollY * 1.2 + "px";
   if (window.scrollY < 515) {
@@ -32,15 +44,21 @@ addEventListener("scroll", (e) => {
         servicesText.style.marginTop = (window.scrollY - 380) * -3 + 90 + "px";
       }
     }
+    if (window.scrollY < 50) {
+      if (window.matchMedia("(min-width: 64rem)").matches) {
+        servicesText.style.marginTop = (50 - 380) * -3 + "px";
+      } else {
+        servicesText.style.marginTop = (50 - 380) * -3 + 90 + "px";
+      }
+    }
   } else {
     servicesHeader.style.marginTop = 515 * 1.2 + "px";
-    
-    
-      if (window.matchMedia("(min-width: 64rem)").matches) {
-        servicesText.style.marginTop = (515 - 380) * -3 + "px";
-      } else {
-        servicesText.style.marginTop = (515 - 380) * -3 + 90 + "px";
-      }
+
+    if (window.matchMedia("(min-width: 64rem)").matches) {
+      servicesText.style.marginTop = (515 - 380) * -3 + "px";
+    } else {
+      servicesText.style.marginTop = (515 - 380) * -3 + 90 + "px";
+    }
   }
 });
 
@@ -102,4 +120,12 @@ function mobileMenu() {
     mobileNavigator = true;
     showMenu();
   }
+}
+
+function whyUsTextApprear() {
+  setTimeout(() => {
+          whyUsText.classList.remove("whyUsTextStart");
+
+          whyUsText.classList.add("whyUsTextTransition");
+  }, 500);
 }
