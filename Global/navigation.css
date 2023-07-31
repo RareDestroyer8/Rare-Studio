@@ -12,8 +12,18 @@
 }
 
 .navElement {
-  color: white;
+  color: #ffffff;
   
+
+  text-shadow:
+    -2px -2px 0 #c5002b,
+     0   -2px 0 #c5002b,
+     2px -2px 0 #c5002b,
+     2px  0   0 #c5002b,
+     2px  2px 0 #c5002b,
+     0    2px 0 #c5002b,
+    -2px  2px 0 #c5002b,
+    -2px  0   0 #c5002b;
 }
 
 .mobileNavButtonShow {
@@ -122,7 +132,6 @@
   left: 90%;
 }
 
-
 /* Mobile */
 @media (min-width: 0em) and (orientation: portrait) {
   .navElement {
@@ -132,13 +141,13 @@
   }
 }
 
-@media (min-width: 0em) and (orientation: landscape) {}
-
+@media (min-width: 0em) and (orientation: landscape) {
+}
 
 /* Desktop */
 @media (min-width: 64rem) {
   .navElement {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     position: fixed;
     transition-property: top, left;
     transition-duration: 0.5s;
