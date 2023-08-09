@@ -59,6 +59,40 @@
     width: 80%;
   }
 
+    #servicesTextOne {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 100px;
+    width: 80%;
+  }
+      #servicesTextTwo {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 100px;
+    width: 80%;
+  }
+      #servicesTextThree {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 100px;
+    width: 80%;
+  }
+
   #whyUs {
     position: absolute;
     top: 90rem;
@@ -113,7 +147,7 @@
     top: 30%;
     left: 50%;
     transform: translate(-50%);
-    font-size: 6rem;
+    font-size: 5rem;
     text-align: center;
     margin: 0;
   }
@@ -124,10 +158,53 @@
     top: 200%;
     left: 50%;
     transform: translate(-50%);
-    font-size: 3rem;
+    font-size: 1.7rem;
     text-align: center;
     margin: 0;
     width: 80%;
+  }
+
+  #servicesTextOne {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    top: 200%;
+    left: 50%;
+    transform: translate(-50%) rotateZ(0.5deg);
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0;
+    width: 110%;
+    background-color: #d54c11;
+clip-path: polygon(0 0, 99% 0, 100% 100%, 1% 100%);
+
+  }
+    #servicesTextTwo {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 220%;
+    left: 50%;
+    transform: translate(-50%) rotateZ(-0.5deg);
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0;
+    width: 110%;
+    background-color: #d54c11;
+clip-path: polygon(1% 0, 100% 0, 99% 100%, 0 100%);
+
+  }
+    #servicesTextThree {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 240%;
+    left: 50%;
+    transform: translate(-50%) rotateZ(0.5deg);
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0;
+    width: 110%;
+    background-color: #d54c11;
+    clip-path: polygon(0 0, 99% 0, 100% 100%, 1% 100%);
+
   }
 
   #whyUs {

@@ -1,6 +1,8 @@
 let title = document.getElementById("header");
 let servicesHeader = document.querySelector("#servicesHeader");
-let servicesText = document.querySelector("#servicesText");
+let servicesTextOne = document.getElementById("servicesTextOne");
+let servicesTextTwo = document.getElementById("servicesTextTwo");
+let servicesTextThree = document.getElementById("servicesTextThree");
 
 let whyUsHeader = document.querySelector("#whyUsHeader");
 let whyUsText = document.querySelector("#whyUsText");
@@ -13,7 +15,8 @@ var mobileNavButton = document.querySelector("#mobileNavButton");
 var mobileNavButtonIcon = document.querySelector("#mobileNavButtonIcon");
 
 var mobileNavigator = true;
-
+console.log(servicesTextOne.innerHTML);
+console.log(servicesTextOne.style.left);
 if (window.matchMedia("(min-width: 64rem)").matches) {
   moveNavElements();
 } else {
@@ -21,43 +24,82 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 }
 
 addEventListener("scroll", (e) => {
-      if (window.scrollY > 1100) {
-        whyUsHeader.classList.remove("whyUsHeaderStart");
+  if (window.scrollY > 1100) {
+    whyUsHeader.classList.remove("whyUsHeaderStart");
 
-        whyUsHeader.classList.add("whyUsHeaderTransition");
+    whyUsHeader.classList.add("whyUsHeaderTransition");
 
-        whyUsTextApprear();
-      }
+    whyUsTextApprear();
+  }
   if (window.matchMedia("(min-width: 64rem)").matches) {
     moveNavElements();
-
   }
 
+  //
   console.log(window.scrollY);
   title.style.marginTop = window.scrollY * 1.2 + "px";
+  //
+  //
   if (window.scrollY < 515) {
+    // <515
     servicesHeader.style.marginTop = window.scrollY * 1.2 + "px";
-    if (window.scrollY > 380) {
-      if (window.matchMedia("(min-width: 64rem)").matches) {
-        servicesText.style.marginTop = (window.scrollY - 380) * -3 + "px";
-      } else {
-        servicesText.style.marginTop = (window.scrollY - 380) * -3 + 90 + "px";
-      }
+    //
+    if (
+      window.scrollY > 380 && // >380 Desktop
+      window.matchMedia("(min-width: 64rem)").matches
+    ) {
+      //
+      servicesTextOne.style.marginTop = (window.scrollY - 380) * -3 + "px";
+      servicesTextOne.style.left = 565 - window.scrollY + "%";
+
+      servicesTextTwo.style.marginTop = (window.scrollY - 380) * -3 + "px";
+      servicesTextTwo.style.left = -465 + window.scrollY + "%";
+
+      servicesTextThree.style.marginTop = (window.scrollY - 380) * -3 + "px";
+      servicesTextThree.style.left = 565 - window.scrollY + "%";
+      //
+    } else if (window.scrollY > 380) {
+      // >380 Mobile
+      servicesTextOne.style.marginTop = (window.scrollY - 380) * -3 + 90 + "px";
+      servicesTextTwo.style.marginTop = (window.scrollY - 380) * -3 + 90 + "px";
+      servicesTextThree.style.marginTop =
+        (window.scrollY - 380) * -3 + 90 + "px";
     }
-    if (window.scrollY < 50) {
-      if (window.matchMedia("(min-width: 64rem)").matches) {
-        servicesText.style.marginTop = (50 - 380) * -3 + "px";
-      } else {
-        servicesText.style.marginTop = (50 - 380) * -3 + 90 + "px";
-      }
+    //
+    //
+    //
+    if (
+      window.scrollY < 50 && // <50 Desktop
+      window.matchMedia("(min-width: 64rem)").matches
+    ) {
+      servicesTextOne.style.marginTop = (50 - 380) * -3 + "px";
+      servicesTextTwo.style.marginTop = (50 - 380) * -3 + "px";
+      servicesTextThree.style.marginTop = (50 - 380) * -3 + "px";
+      //
+    } else if (window.scrollY < 50) {
+      // >50 Mobile
+      servicesTextOne.style.marginTop = (50 - 380) * -3 + 90 + "px";
+      servicesTextTwo.style.marginTop = (50 - 380) * -3 + 90 + "px";
+      servicesTextThree.style.marginTop = (50 - 380) * -3 + 90 + "px";
     }
-  } else {
+    //
+    //
+    //
+  } // >515
+  else {
     servicesHeader.style.marginTop = 515 * 1.2 + "px";
+    servicesTextOne.style.left = 565 - 515 + "%";
+    servicesTextTwo.style.left = 565 - 515 + "%";
+    servicesTextThree.style.left = 565 - 515 + "%";
 
     if (window.matchMedia("(min-width: 64rem)").matches) {
-      servicesText.style.marginTop = (515 - 380) * -3 + "px";
+      servicesTextOne.style.marginTop = (515 - 380) * -3 + "px";
+      servicesTextTwo.style.marginTop = (515 - 380) * -3 + "px";
+      servicesTextThree.style.marginTop = (515 - 380) * -3 + "px";
     } else {
-      servicesText.style.marginTop = (515 - 380) * -3 + 90 + "px";
+      servicesTextOne.style.marginTop = (515 - 380) * -3 + 90 + "px";
+      servicesTextTwo.style.marginTop = (515 - 380) * -3 + 90 + "px";
+      servicesTextThree.style.marginTop = (515 - 380) * -3 + 90 + "px";
     }
   }
 });
@@ -124,8 +166,8 @@ function mobileMenu() {
 
 function whyUsTextApprear() {
   setTimeout(() => {
-          whyUsText.classList.remove("whyUsTextStart");
+    whyUsText.classList.remove("whyUsTextStart");
 
-          whyUsText.classList.add("whyUsTextTransition");
+    whyUsText.classList.add("whyUsTextTransition");
   }, 500);
 }
