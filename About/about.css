@@ -1,7 +1,6 @@
-/* Mobile */
-
 .whyUsHeaderStart {
   transform: scale(0.44);
+  transition: 0.25s;
   filter: blur(16px);
   opacity: 0;
 }
@@ -10,12 +9,13 @@
   transform: scale(1);
   filter: blur(0px);
   opacity: 1;
-  transition: 1s;
+  transition: 0.5s;
 }
 
 .whyUsTextStart {
   transform: scale(0.44);
   filter: blur(16px);
+  transition: 0.25s;
   opacity: 0;
 }
 
@@ -23,8 +23,41 @@
   transform: scale(1);
   filter: blur(0px);
   opacity: 1;
-  transition: 1s;
+  transition: 0.5s;
 }
+
+.whyUsCenter{
+      transform: translate(-50%);
+    left: 50%;
+}.whyUsLeft{
+      transform: translate(-50%);
+    left: 25%;
+}
+
+#whyUsImg{
+  position: absolute;
+  left: 48%;
+top: 0;
+width: 40%;
+height: 40rem;
+transition-duration: 0.5s;
+box-shadow: 0 0 60px 20px rgb(0, 0, 0);
+background-image:url(/photo-1542831371-29b0f74f9713.jpg);
+}
+.whyUsImgHidden{
+opacity: 0;
+transform: scale(1.05);
+filter: blur(16px);
+
+}
+.whyUsImgShown{
+opacity: 1;
+transform: scale(1);
+filter: blur(0px);
+
+}
+
+/* Mobile */
 
 @media (min-width: 0em) and (orientation: portrait) {
   #services {
@@ -59,7 +92,7 @@
     width: 80%;
   }
 
-    #servicesTextOne {
+  #servicesTextOne {
     position: absolute;
     color: rgb(0, 0, 0);
     top: 200%;
@@ -70,7 +103,7 @@
     margin-top: 100px;
     width: 80%;
   }
-      #servicesTextTwo {
+  #servicesTextTwo {
     position: absolute;
     color: rgb(0, 0, 0);
     top: 200%;
@@ -81,7 +114,7 @@
     margin-top: 100px;
     width: 80%;
   }
-      #servicesTextThree {
+  #servicesTextThree {
     position: absolute;
     color: rgb(0, 0, 0);
     top: 200%;
@@ -152,64 +185,50 @@
     margin: 0;
   }
 
-  #servicesText {
+  .services {
     position: absolute;
-    color: rgb(0, 0, 0);
-    top: 200%;
+    color: rgb(255, 250, 250);
     left: 50%;
-    transform: translate(-50%);
     font-size: 1.7rem;
     text-align: center;
     margin: 0;
-    width: 80%;
-  }
+    width: 105%;
+    height: 5rem;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+
+}
+
 
   #servicesTextOne {
-    position: absolute;
-    color: rgb(255, 255, 255);
-    top: 200%;
-    left: 50%;
-    transform: translate(-50%) rotateZ(0.5deg);
-    font-size: 1.7rem;
-    text-align: center;
-    margin: 0;
-    width: 110%;
-    background-color: #d54c11;
-clip-path: polygon(0 0, 99% 0, 100% 100%, 1% 100%);
+    box-shadow: 10px 0px 100px 1000px #ff0000;
+    
+    
+    
+    top: 205%;
+    clip-path: polygon(0 0, 98% 0, 100% 100%, 2% 100%);
+background: center #ed740a;
+    transform: translate(-50%) rotateZ(.5deg);
 
   }
-    #servicesTextTwo {
-    position: absolute;
-    color: rgb(0, 0, 0);
+  #servicesTextTwo {
+    clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
+    transform: translate(-50%) rotateZ(-.5deg);
+background: center #ad5203;
     top: 220%;
-    left: 50%;
-    transform: translate(-50%) rotateZ(-0.5deg);
-    font-size: 1.7rem;
-    text-align: center;
-    margin: 0;
-    width: 110%;
-    background-color: #d54c11;
-clip-path: polygon(1% 0, 100% 0, 99% 100%, 0 100%);
-
   }
-    #servicesTextThree {
-    position: absolute;
-    color: rgb(0, 0, 0);
-    top: 240%;
-    left: 50%;
-    transform: translate(-50%) rotateZ(0.5deg);
-    font-size: 1.7rem;
-    text-align: center;
-    margin: 0;
-    width: 110%;
-    background-color: #d54c11;
-    clip-path: polygon(0 0, 99% 0, 100% 100%, 1% 100%);
-
+  #servicesTextThree {
+    top: 235%;
+    transform: translate(-50%) rotateZ(.5deg);
+background: center #cb660e;
+    clip-path: polygon(0 0, 98% 0, 100% 100%, 2% 100%);
   }
 
+  
   #whyUs {
     position: absolute;
-    top: 90rem;
+    top: 77rem;
     left: 0;
     width: 100%;
     height: 41rem;
@@ -220,8 +239,7 @@ clip-path: polygon(1% 0, 100% 0, 99% 100%, 0 100%);
     position: absolute;
     color: rgb(0, 0, 0);
     top: 0%;
-    transform: translate(-50%);
-    left: 50%;
+
     font-size: 5rem;
     white-space: nowrap;
     text-align: center;
@@ -232,8 +250,7 @@ clip-path: polygon(1% 0, 100% 0, 99% 100%, 0 100%);
     position: absolute;
     color: rgb(0, 0, 0);
     top: 6.5rem;
-    left: 50%;
-    transform: translate(-50%);
+
     font-size: 3rem;
     text-align: center;
     margin: 0;
@@ -251,7 +268,7 @@ clip-path: polygon(1% 0, 100% 0, 99% 100%, 0 100%);
   .reviews {
     position: absolute;
     transform: translate(-50%);
-    background-color:#b30027;
+    background-color: #b30027;
     clip-path: polygon(0 0, 75% 10%, 75% 100%, 0 90%);
     height: 35rem;
     width: 30rem;
@@ -270,4 +287,8 @@ clip-path: polygon(1% 0, 100% 0, 99% 100%, 0 100%);
     top: 148rem;
     left: 80%;
   }
+
+
+
+
 }

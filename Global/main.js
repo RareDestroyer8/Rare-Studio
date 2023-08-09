@@ -6,6 +6,7 @@ let servicesTextThree = document.getElementById("servicesTextThree");
 
 let whyUsHeader = document.querySelector("#whyUsHeader");
 let whyUsText = document.querySelector("#whyUsText");
+let whyUsImg = document.querySelector("#whyUsImg");
 
 var about = document.querySelector("#about");
 var pricing = document.querySelector("#pricing");
@@ -15,6 +16,10 @@ var mobileNavButton = document.querySelector("#mobileNavButton");
 var mobileNavButtonIcon = document.querySelector("#mobileNavButtonIcon");
 
 var mobileNavigator = true;
+
+var isSectionOneDone = false;
+var isSectionTwoDone = false;
+
 console.log(servicesTextOne.innerHTML);
 console.log(servicesTextOne.style.left);
 if (window.matchMedia("(min-width: 64rem)").matches) {
@@ -24,13 +29,21 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 }
 
 addEventListener("scroll", (e) => {
-  if (window.scrollY > 1100) {
+  if (window.scrollY > 1000 && isSectionTwoDone == false) {
     whyUsHeader.classList.remove("whyUsHeaderStart");
 
     whyUsHeader.classList.add("whyUsHeaderTransition");
 
-    whyUsTextApprear();
+    whyUsTextAppear();
+    whyUsLeft();
+    whyUsImgAppear();
+    isSectionTwoDone = true;
+  } else {
+    whyUsHeader.style.marginTop = (1000 - window.scrollY) * 0.25 + "px";
+    whyUsText.style.marginTop = (1000 - window.scrollY) * 0.25 + "px";
+    whyUsImg.style.marginTop = (1000 - window.scrollY) * 0.25 + "px";
   }
+
   if (window.matchMedia("(min-width: 64rem)").matches) {
     moveNavElements();
   }
@@ -40,7 +53,7 @@ addEventListener("scroll", (e) => {
   title.style.marginTop = window.scrollY * 1.2 + "px";
   //
   //
-  if (window.scrollY < 515) {
+  if (window.scrollY < 515 && isSectionOneDone == false) {
     // <515
     servicesHeader.style.marginTop = window.scrollY * 1.2 + "px";
     //
@@ -87,19 +100,27 @@ addEventListener("scroll", (e) => {
     //
   } // >515
   else {
-    servicesHeader.style.marginTop = 515 * 1.2 + "px";
+    isSectionOneDone = true;
+    servicesHeader.style.marginTop =
+      515 * 1.2 + (515 - window.scrollY) * 0.75 + "px";
     servicesTextOne.style.left = 565 - 515 + "%";
     servicesTextTwo.style.left = 565 - 515 + "%";
     servicesTextThree.style.left = 565 - 515 + "%";
 
     if (window.matchMedia("(min-width: 64rem)").matches) {
-      servicesTextOne.style.marginTop = (515 - 380) * -3 + "px";
-      servicesTextTwo.style.marginTop = (515 - 380) * -3 + "px";
-      servicesTextThree.style.marginTop = (515 - 380) * -3 + "px";
+      servicesTextOne.style.marginTop =
+        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+      servicesTextTwo.style.marginTop =
+        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+      servicesTextThree.style.marginTop =
+        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
     } else {
-      servicesTextOne.style.marginTop = (515 - 380) * -3 + 90 + "px";
-      servicesTextTwo.style.marginTop = (515 - 380) * -3 + 90 + "px";
-      servicesTextThree.style.marginTop = (515 - 380) * -3 + 90 + "px";
+      servicesTextOne.style.marginTop =
+        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+      servicesTextTwo.style.marginTop =
+        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+      servicesTextThree.style.marginTop =
+        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
     }
   }
 });
@@ -164,10 +185,29 @@ function mobileMenu() {
   }
 }
 
-function whyUsTextApprear() {
+function whyUsTextAppear() {
   setTimeout(() => {
     whyUsText.classList.remove("whyUsTextStart");
 
     whyUsText.classList.add("whyUsTextTransition");
   }, 500);
+}
+
+function whyUsLeft() {
+  setTimeout(() => {
+    whyUsHeader.classList.remove("whyUsCenter");
+    whyUsText.classList.remove("whyUsCenter");
+
+    whyUsHeader.classList.add("whyUsLeft");
+    whyUsText.classList.add("whyUsLeft");
+  }, 1500);
+}
+
+function whyUsImgAppear() {
+  setTimeout(() => {
+    whyUsImg.classList.remove("whyUsImgHidden");
+
+    whyUsImg.classList.add("whyUsImgShown");
+    isWhyUsDone = false;
+  }, 2000);
 }
