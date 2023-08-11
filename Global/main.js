@@ -11,12 +11,9 @@ let whyUsImg = document.querySelector("#whyUsImg");
 let waitHeader = document.querySelector("#waitHeader");
 let waitTextContainer = document.querySelector("#waitTextContainer");
 
-
 var about = document.querySelector("#about");
 var pricing = document.querySelector("#pricing");
 var contact = document.querySelector("#contact");
-
-
 
 var mobileNavButton = document.querySelector("#mobileNavButton");
 var mobileNavButtonIcon = document.querySelector("#mobileNavButtonIcon");
@@ -27,11 +24,8 @@ var isSectionOneDone = false;
 var isSectionTwoDone = false;
 var isSectionThreeDone = false;
 
-    var i = 0;
+var i = 0;
 
-
-console.log(servicesTextOne.innerHTML);
-console.log(servicesTextOne.style.left);
 if (window.matchMedia("(min-width: 64rem)").matches) {
   moveNavElements();
 } else {
@@ -39,31 +33,17 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 }
 
 addEventListener("scroll", (e) => {
-      if (isSectionThreeDone == false && window.scrollY > 1600) {
-         isSectionThreeDone = true;
-      waitTextContainer.classList.remove("waitTextContainerStart");
-      waitTextContainer.classList.add("waitTextContainerTransition");
+  if (isSectionThreeDone == false && window.scrollY > 1600) {
 
-      setTimeout(() => {
-                    waitHeader.classList.remove("waitHeaderStart");
-                    waitHeader.classList.add("waitHeaderTransition");
-      }, 250);
+  }
 
-      }
-  
   if (window.scrollY > 950) {
-
-
-
-
     if (isSectionTwoDone == false) {
       whyUsHeader.classList.remove("whyUsHeaderStart");
 
       whyUsHeader.classList.add("whyUsHeaderTransition");
 
-      whyUsTextAppear();
-      whyUsLeft();
-      whyUsImgAppear();
+     
       isSectionTwoDone = true;
     } else {
     }
@@ -241,4 +221,3 @@ function whyUsImgAppear() {
     isWhyUsDone = false;
   }, 700);
 }
-
