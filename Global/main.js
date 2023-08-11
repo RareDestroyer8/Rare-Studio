@@ -34,7 +34,14 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 
 addEventListener("scroll", (e) => {
   if (isSectionThreeDone == false && window.scrollY > 1600) {
+    isSectionThreeDone = true;
+    waitTextContainer.classList.remove("waitTextContainerStart");
+    waitTextContainer.classList.add("waitTextContainerTransition");
 
+    setTimeout(() => {
+      waitHeader.classList.remove("waitHeaderStart");
+      waitHeader.classList.add("waitHeaderTransition");
+    }, 250);
   }
 
   if (window.scrollY > 950) {
@@ -43,7 +50,9 @@ addEventListener("scroll", (e) => {
 
       whyUsHeader.classList.add("whyUsHeaderTransition");
 
-     
+      whyUsTextAppear();
+      whyUsLeft();
+      whyUsImgAppear();
       isSectionTwoDone = true;
     } else {
     }
