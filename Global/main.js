@@ -39,7 +39,7 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 }
 
 addEventListener("scroll", (e) => {
-      if (isSectionThreeDone == false && window.scrollY > 1500) {
+      if (isSectionThreeDone == false && window.scrollY > 1600) {
          isSectionThreeDone = true;
       waitTextContainer.classList.remove("waitTextContainerStart");
       waitTextContainer.classList.add("waitTextContainerTransition");
