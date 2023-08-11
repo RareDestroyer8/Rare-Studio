@@ -2,6 +2,13 @@ html {
   margin: 0;
 
   background-color: #b30027;
+
+  -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
 
 body {
@@ -50,4 +57,5 @@ body {
   background-color: rgb(255, 255, 255);
   z-index: -15;
   margin: 0;
+  padding: 0;
 }

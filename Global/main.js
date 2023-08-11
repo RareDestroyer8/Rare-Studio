@@ -8,9 +8,15 @@ let whyUsHeader = document.querySelector("#whyUsHeader");
 let whyUsText = document.querySelector("#whyUsText");
 let whyUsImg = document.querySelector("#whyUsImg");
 
+let waitHeader = document.querySelector("#waitHeader");
+let waitTextContainer = document.querySelector("#waitTextContainer");
+
+
 var about = document.querySelector("#about");
 var pricing = document.querySelector("#pricing");
 var contact = document.querySelector("#contact");
+
+
 
 var mobileNavButton = document.querySelector("#mobileNavButton");
 var mobileNavButtonIcon = document.querySelector("#mobileNavButtonIcon");
@@ -19,6 +25,10 @@ var mobileNavigator = true;
 
 var isSectionOneDone = false;
 var isSectionTwoDone = false;
+var isSectionThreeDone = false;
+
+    var i = 0;
+
 
 console.log(servicesTextOne.innerHTML);
 console.log(servicesTextOne.style.left);
@@ -29,19 +39,39 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 }
 
 addEventListener("scroll", (e) => {
-  if (window.scrollY > 1000 && isSectionTwoDone == false) {
-    whyUsHeader.classList.remove("whyUsHeaderStart");
+      if (isSectionThreeDone == false && window.scrollY > 1500) {
+         isSectionThreeDone = true;
+      waitTextContainer.classList.remove("waitTextContainerStart");
+      waitTextContainer.classList.add("waitTextContainerTransition");
 
-    whyUsHeader.classList.add("whyUsHeaderTransition");
+      setTimeout(() => {
+                    waitHeader.classList.remove("waitHeaderStart");
+                    waitHeader.classList.add("waitHeaderTransition");
+      }, 250);
 
-    whyUsTextAppear();
-    whyUsLeft();
-    whyUsImgAppear();
-    isSectionTwoDone = true;
+      }
+  
+  if (window.scrollY > 950) {
+
+
+
+
+    if (isSectionTwoDone == false) {
+      whyUsHeader.classList.remove("whyUsHeaderStart");
+
+      whyUsHeader.classList.add("whyUsHeaderTransition");
+
+      whyUsTextAppear();
+      whyUsLeft();
+      whyUsImgAppear();
+      isSectionTwoDone = true;
+    } else {
+    }
   } else {
-    whyUsHeader.style.marginTop = (1000 - window.scrollY) * 0.25 + "px";
-    whyUsText.style.marginTop = (1000 - window.scrollY) * 0.25 + "px";
-    whyUsImg.style.marginTop = (1000 - window.scrollY) * 0.25 + "px";
+    whyUsHeader.style.marginTop = (950 - window.scrollY) * 1 + "px";
+    whyUsText.style.marginTop = (950 - window.scrollY) * 1 + "px";
+    whyUsImg.style.marginTop = (950 - window.scrollY) * 1 + "px";
+    console.log("doing");
   }
 
   if (window.matchMedia("(min-width: 64rem)").matches) {
@@ -190,7 +220,7 @@ function whyUsTextAppear() {
     whyUsText.classList.remove("whyUsTextStart");
 
     whyUsText.classList.add("whyUsTextTransition");
-  }, 500);
+  }, 300);
 }
 
 function whyUsLeft() {
@@ -200,7 +230,7 @@ function whyUsLeft() {
 
     whyUsHeader.classList.add("whyUsLeft");
     whyUsText.classList.add("whyUsLeft");
-  }, 1500);
+  }, 550);
 }
 
 function whyUsImgAppear() {
@@ -209,5 +239,6 @@ function whyUsImgAppear() {
 
     whyUsImg.classList.add("whyUsImgShown");
     isWhyUsDone = false;
-  }, 2000);
+  }, 700);
 }
+
