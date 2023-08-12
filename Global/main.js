@@ -33,113 +33,117 @@ if (window.matchMedia("(min-width: 64rem)").matches) {
 }
 
 addEventListener("scroll", (e) => {
-  if (isSectionThreeDone == false && window.scrollY > 1600) {
-    isSectionThreeDone = true;
-    waitTextContainer.classList.remove("waitTextContainerStart");
-    waitTextContainer.classList.add("waitTextContainerTransition");
-
+  if (window.matchMedia("(min-width:64rem)").matches) {
+    console.log("hiii");
+    if (isSectionThreeDone == false && window.scrollY > 1600) {
+      isSectionThreeDone = true;
+      waitTextContainer.classList.remove("waitTextContainerStart");
+      waitTextContainer.classList.add("waitTextContainerTransition");
+    }
     setTimeout(() => {
       waitHeader.classList.remove("waitHeaderStart");
       waitHeader.classList.add("waitHeaderTransition");
     }, 250);
-  }
 
-  if (window.scrollY > 950) {
-    if (isSectionTwoDone == false) {
-      whyUsHeader.classList.remove("whyUsHeaderStart");
+    if (window.scrollY > 950) {
+      if (isSectionTwoDone == false) {
+        whyUsHeader.classList.remove("whyUsHeaderStart");
 
-      whyUsHeader.classList.add("whyUsHeaderTransition");
+        whyUsHeader.classList.add("whyUsHeaderTransition");
 
-      whyUsTextAppear();
-      whyUsLeft();
-      whyUsImgAppear();
-      isSectionTwoDone = true;
+        whyUsTextAppear();
+        whyUsLeft();
+        whyUsImgAppear();
+        isSectionTwoDone = true;
+      } else {
+      }
     } else {
+      whyUsHeader.style.marginTop = (950 - window.scrollY) * 1 + "px";
+      whyUsText.style.marginTop = (950 - window.scrollY) * 1 + "px";
+      whyUsImg.style.marginTop = (950 - window.scrollY) * 1 + "px";
+      console.log("doing");
     }
-  } else {
-    whyUsHeader.style.marginTop = (950 - window.scrollY) * 1 + "px";
-    whyUsText.style.marginTop = (950 - window.scrollY) * 1 + "px";
-    whyUsImg.style.marginTop = (950 - window.scrollY) * 1 + "px";
-    console.log("doing");
-  }
-
-  if (window.matchMedia("(min-width: 64rem)").matches) {
-    moveNavElements();
-  }
-
-  //
-  console.log(window.scrollY);
-  title.style.marginTop = window.scrollY * 1.2 + "px";
-  //
-  //
-  if (window.scrollY < 515 && isSectionOneDone == false) {
-    // <515
-    servicesHeader.style.marginTop = window.scrollY * 1.2 + "px";
-    //
-    if (
-      window.scrollY > 380 && // >380 Desktop
-      window.matchMedia("(min-width: 64rem)").matches
-    ) {
-      //
-      servicesTextOne.style.marginTop = (window.scrollY - 380) * -3 + "px";
-      servicesTextOne.style.left = 565 - window.scrollY + "%";
-
-      servicesTextTwo.style.marginTop = (window.scrollY - 380) * -3 + "px";
-      servicesTextTwo.style.left = -465 + window.scrollY + "%";
-
-      servicesTextThree.style.marginTop = (window.scrollY - 380) * -3 + "px";
-      servicesTextThree.style.left = 565 - window.scrollY + "%";
-      //
-    } else if (window.scrollY > 380) {
-      // >380 Mobile
-      servicesTextOne.style.marginTop = (window.scrollY - 380) * -3 + 90 + "px";
-      servicesTextTwo.style.marginTop = (window.scrollY - 380) * -3 + 90 + "px";
-      servicesTextThree.style.marginTop =
-        (window.scrollY - 380) * -3 + 90 + "px";
-    }
-    //
-    //
-    //
-    if (
-      window.scrollY < 50 && // <50 Desktop
-      window.matchMedia("(min-width: 64rem)").matches
-    ) {
-      servicesTextOne.style.marginTop = (50 - 380) * -3 + "px";
-      servicesTextTwo.style.marginTop = (50 - 380) * -3 + "px";
-      servicesTextThree.style.marginTop = (50 - 380) * -3 + "px";
-      //
-    } else if (window.scrollY < 50) {
-      // >50 Mobile
-      servicesTextOne.style.marginTop = (50 - 380) * -3 + 90 + "px";
-      servicesTextTwo.style.marginTop = (50 - 380) * -3 + 90 + "px";
-      servicesTextThree.style.marginTop = (50 - 380) * -3 + 90 + "px";
-    }
-    //
-    //
-    //
-  } // >515
-  else {
-    isSectionOneDone = true;
-    servicesHeader.style.marginTop =
-      515 * 1.2 + (515 - window.scrollY) * 0.75 + "px";
-    servicesTextOne.style.left = 565 - 515 + "%";
-    servicesTextTwo.style.left = 565 - 515 + "%";
-    servicesTextThree.style.left = 565 - 515 + "%";
 
     if (window.matchMedia("(min-width: 64rem)").matches) {
-      servicesTextOne.style.marginTop =
-        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
-      servicesTextTwo.style.marginTop =
-        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
-      servicesTextThree.style.marginTop =
-        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
-    } else {
-      servicesTextOne.style.marginTop =
-        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
-      servicesTextTwo.style.marginTop =
-        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
-      servicesTextThree.style.marginTop =
-        (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+      moveNavElements();
+    }
+
+    //
+    console.log(window.scrollY);
+    title.style.marginTop = window.scrollY * 1.2 + "px";
+    //
+    //
+    if (window.scrollY < 515 && isSectionOneDone == false) {
+      // <515
+      servicesHeader.style.marginTop = window.scrollY * 1.2 + "px";
+      //
+      if (
+        window.scrollY > 380 && // >380 Desktop
+        window.matchMedia("(min-width: 64rem)").matches
+      ) {
+        //
+        servicesTextOne.style.marginTop = (window.scrollY - 380) * -3 + "px";
+        servicesTextOne.style.left = 565 - window.scrollY + "%";
+
+        servicesTextTwo.style.marginTop = (window.scrollY - 380) * -3 + "px";
+        servicesTextTwo.style.left = -465 + window.scrollY + "%";
+
+        servicesTextThree.style.marginTop = (window.scrollY - 380) * -3 + "px";
+        servicesTextThree.style.left = 565 - window.scrollY + "%";
+        //
+      } else if (window.scrollY > 380) {
+        // >380 Mobile
+        servicesTextOne.style.marginTop =
+          (window.scrollY - 380) * -3 + 90 + "px";
+        servicesTextTwo.style.marginTop =
+          (window.scrollY - 380) * -3 + 90 + "px";
+        servicesTextThree.style.marginTop =
+          (window.scrollY - 380) * -3 + 90 + "px";
+      }
+      //
+      //
+      //
+      if (
+        window.scrollY < 50 && // <50 Desktop
+        window.matchMedia("(min-width: 64rem)").matches
+      ) {
+        servicesTextOne.style.marginTop = (50 - 380) * -3 + "px";
+        servicesTextTwo.style.marginTop = (50 - 380) * -3 + "px";
+        servicesTextThree.style.marginTop = (50 - 380) * -3 + "px";
+        //
+      } else if (window.scrollY < 50) {
+        // >50 Mobile
+        servicesTextOne.style.marginTop = (50 - 380) * -3 + 90 + "px";
+        servicesTextTwo.style.marginTop = (50 - 380) * -3 + 90 + "px";
+        servicesTextThree.style.marginTop = (50 - 380) * -3 + 90 + "px";
+      }
+      //
+      //
+      //
+    } // >515
+    else {
+      isSectionOneDone = true;
+      servicesHeader.style.marginTop =
+        515 * 1.2 + (515 - window.scrollY) * 0.75 + "px";
+      servicesTextOne.style.left = 565 - 515 + "%";
+      servicesTextTwo.style.left = 565 - 515 + "%";
+      servicesTextThree.style.left = 565 - 515 + "%";
+
+      if (window.matchMedia("(min-width: 64rem)").matches) {
+        servicesTextOne.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+        servicesTextTwo.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+        servicesTextThree.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+      } else {
+        servicesTextOne.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+        servicesTextTwo.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+        servicesTextThree.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+      }
     }
   }
 });

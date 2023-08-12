@@ -1,107 +1,9 @@
-
-
 /* Transitions */
-.whyUsHeaderStart {
-  transform: scale(0.44);
-  transition-property: filter, transition, opcaity, left;
-  transition: 0.25s;
-  filter: blur(16px);
-  opacity: 0;
-}
-
-.whyUsHeaderTransition {
-  transform: scale(1);
-  filter: blur(0px);
-  opacity: 1;
-  transition: 0.25s;
-  transition-property: filter, transition, opcaity, left;
-}
-
-.whyUsTextStart {
-  transform: scale(0.44);
-  filter: blur(16px);
-  transition: 0.25s;
-  opacity: 0;
-  transition-property: filter, transition, opcaity, left;
-}
-
-.whyUsTextTransition {
-  transform: scale(1);
-  filter: blur(0px);
-  opacity: 1;
-  transition: 0.25s;
-  transition-property: filter, transition, opcaity, left;
-}
-
-.whyUsCenter {
-  transform: translate(-50%);
-  left: 50%;
-  transition-property: filter, transition, opcaity, left;
-}
-
-.whyUsLeft {
-  transform: translate(-50%);
-  left: 25%;
-  transition-property: filter, transition, opcaity, left;
-}
-
-.waitTextContainerStart {
-  transition-duration: 0.5s;
-  position: absolute;
-  top: 150rem;
-  left: 50%;
-  width: 80%;
-  height: 50%;
-}
-
-.waitTextContainerTransition {
-  transition-duration: 0.5s;
-  position: absolute;
-  top: 130rem;
-  left: 50%;
-  width: 80%;
-  height: 50%;
-}
-
-.waitHeaderStart {
-  transition-duration: 0.5s;
-  position: absolute;
-  top: 150rem;
-  left: 50%;
-  width: 80%;
-  height: 50%;
-}
-
-.waitHeaderTransition {
-  transition-duration: 0.5s;
-  position: absolute;
-  top: 118rem;
-  left: 50%;
-  width: 80%;
-  height: 50%;
-}
-
-.whyUsImgHidden {
-  opacity: 0;
-  transform: scale(1.05);
-  filter: blur(16px);
-  box-shadow: 0 0 60px 20px rgb(0, 0, 0);
-
-  transition-property: filter, transition, opcaity, left, box-shadow;
-}
-.whyUsImgShown {
-  opacity: 1;
-  transform: scale(1);
-  filter: blur(0px);
-  box-shadow: 0 0 30px 3px rgb(0, 0, 0);
-
-  transition-property: filter, transition, opcaity, left, box-shadow;
-}
 
 /* Mobile */
 
-@media (min-width: 0em) and (orientation: portrait) {
-/* Section 1 */
+@media (min-width: 0em) and (max-width: 63rem) and (orientation: portrait) {
+  /* Section 1 */
   #services {
     position: absolute;
     top: 0;
@@ -114,10 +16,10 @@
   #servicesHeader {
     position: absolute;
     color: rgb(0, 0, 0);
-    top: 30%;
+    top: 50rem;
     left: 50%;
     transform: translate(-50%);
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
     margin: 0;
   }
@@ -130,38 +32,37 @@
     text-align: center;
     margin: 0;
     width: 99%;
-    height: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translate(-50%);
+  }
+
+  #servicesMobileBackground {
+    position: absolute;
+    left: 50%;
+    top: 62.5rem;
+    transform: translate(-50%);
+    height: 50rem;
+    width: 90%;
+    background-color: #a40528;
   }
 
   #servicesTextOne {
-    box-shadow: 10px 0px 100px 1000px #ff0000;
-
-    top: 205%;
-    clip-path: polygon(0 0, 98% 0, 100% 100%, 2% 100%);
-    background: center #a40528;
-    transform: translate(-50%) rotateZ(0.5deg);
+    top: 1rem;
   }
   #servicesTextTwo {
-    clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
-    transform: translate(-50%) rotateZ(-0.5deg);
-    background: center #cc173e;
-    top: 220%;
+    top: 13rem;
   }
   #servicesTextThree {
-    top: 235%;
-    transform: translate(-50%) rotateZ(0.5deg);
-    background: center #c20a32;
-    clip-path: polygon(0 0, 98% 0, 100% 100%, 2% 100%);
+    top: 30rem;
   }
 
   /* Section 2 */
   #whyUs {
     position: absolute;
-    top: 69rem;
-    left: 0;
+    top: 115rem;
+    left: 0px;
     width: 100%;
     height: 41rem;
     z-index: -12;
@@ -171,9 +72,9 @@
     position: absolute;
     color: #d50a36;
 
-    top: 0%;
+    top: 1rem;
 
-    font-size: 5rem;
+    font-size: 4rem;
     white-space: nowrap;
     text-align: center;
     margin: 0;
@@ -184,23 +85,45 @@
     color: rgb(0, 0, 0);
     top: 6.5rem;
 
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     margin: 0;
     width: 80%;
   }
 
   /* Section 3 */
-  #waitHeader {
-    transform: translate(-50%) rotateZ(-1deg);
+  #wait {
+    position: absolute;
     font-size: 5rem;
     z-index: 5;
+    left: 0%;
+    top: 150rem;
+    width: 100%;
+  }
+
+  #waitHeader {
+    transform: translate(-50%);
+    font-size: 4rem;
+    left: 50%;
+    z-index: 5;
+    width: 80%;
+
+    position: absolute;
+    top: 1rem;
+    
+
+text-align: center;
+    margin: 0;
   }
 
   #waitTextContainer {
+    position: absolute;
+    top: 15rem;
+    left: 50%;
+    width: 90%;
     transform: translate(-50%);
     background-color: #b30027;
-    clip-path: polygon(2% 1%, 100% 0%, 99% 100%, 1% 95%);
+    font-size: 2rem;
   }
 
   #waitOne {
@@ -220,6 +143,34 @@
     height: 40rem;
     transition-duration: 0.5s;
     background-image: url(/photo-1542831371-29b0f74f9713.jpg);
+  }
+
+  .whyUsHeaderStart {
+  }
+
+  .whyUsTextStart {
+  }
+
+  .whyUsCenter {
+    transform: translate(-50%);
+    left: 50%;
+    transition-property: filter, transition, opcaity, left;
+  }
+
+  .waitTextContainerStart {
+
+  }
+
+  .waitHeaderStart {
+  }
+
+  .whyUsImgHidden {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(16px);
+    box-shadow: 0 0 60px 20px rgb(0, 0, 0);
+
+    transition-property: filter, transition, opcaity, left, box-shadow;
   }
 }
 
@@ -347,5 +298,102 @@
     height: 40rem;
     transition-duration: 0.5s;
     background-image: url(/photo-1542831371-29b0f74f9713.jpg);
+  }
+
+  .whyUsHeaderStart {
+    transform: scale(0.44);
+    transition-property: filter, transition, opcaity, left;
+    transition: 0.25s;
+    filter: blur(16px);
+    opacity: 0;
+  }
+
+  .whyUsHeaderTransition {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+    transition: 0.25s;
+    transition-property: filter, transition, opcaity, left;
+  }
+
+  .whyUsTextStart {
+    transform: scale(0.44);
+    filter: blur(16px);
+    transition: 0.25s;
+    opacity: 0;
+    transition-property: filter, transition, opcaity, left;
+  }
+
+  .whyUsTextTransition {
+    transform: scale(1);
+    filter: blur(0px);
+    opacity: 1;
+    transition: 0.25s;
+    transition-property: filter, transition, opcaity, left;
+  }
+
+  .whyUsCenter {
+    transform: translate(-50%);
+    left: 50%;
+    transition-property: filter, transition, opcaity, left;
+  }
+
+  .whyUsLeft {
+    transform: translate(-50%);
+    left: 25%;
+    transition-property: filter, transition, opcaity, left;
+  }
+
+  .waitTextContainerStart {
+    transition-duration: 0.5s;
+    position: absolute;
+    top: 150rem;
+    left: 50%;
+    width: 80%;
+    height: 50%;
+  }
+
+  .waitTextContainerTransition {
+    transition-duration: 0.5s;
+    position: absolute;
+    top: 130rem;
+    left: 50%;
+    width: 80%;
+    height: 50%;
+  }
+
+  .waitHeaderStart {
+    transition-duration: 0.5s;
+    position: absolute;
+    top: 150rem;
+    left: 50%;
+    width: 80%;
+    height: 50%;
+  }
+
+  .waitHeaderTransition {
+    transition-duration: 0.5s;
+    position: absolute;
+    top: 118rem;
+    left: 50%;
+    width: 80%;
+    height: 50%;
+  }
+
+  .whyUsImgHidden {
+    opacity: 0;
+    transform: scale(1.05);
+    filter: blur(16px);
+    box-shadow: 0 0 60px 20px rgb(0, 0, 0);
+
+    transition-property: filter, transition, opcaity, left, box-shadow;
+  }
+  .whyUsImgShown {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+    box-shadow: 0 0 30px 3px rgb(0, 0, 0);
+
+    transition-property: filter, transition, opcaity, left, box-shadow;
   }
 }
