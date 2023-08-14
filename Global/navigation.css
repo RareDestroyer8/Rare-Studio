@@ -5,43 +5,52 @@
 
 #mobileNavButtonIcon {
   position: absolute;
-  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: #69000c;
 }
 
-.navElement {
-  color: #ffffff;
-  
-
-  text-shadow:
-    -2px -2px 0 #c5002b,
-     0   -2px 0 #c5002b,
-     2px -2px 0 #c5002b,
-     2px  0   0 #c5002b,
-     2px  2px 0 #c5002b,
-     0    2px 0 #c5002b,
-    -2px  2px 0 #c5002b,
-    -2px  0   0 #c5002b;
-
-    text-decoration: none;
+#mobileNavMenuText{
+  position: absolute;
+  left: 55%;
+    top: 50%;
+  transform: translate(-50%, -50%);
+  color: #69000c;
 }
 
+.navElement {
+  color: #ffffff;
+
+  text-shadow: -2px -2px 0 #c5002b, 0 -2px 0 #c5002b, 2px -2px 0 #c5002b,
+    2px 0 0 #c5002b, 2px 2px 0 #c5002b, 0 2px 0 #c5002b, -2px 2px 0 #c5002b,
+    -2px 0 0 #c5002b;
+
+  text-decoration: none;
+}
+
+.mobileNavMenuTextShow {
+ opacity: 1;
+  
+}
+.mobileNavMenuTextHide {
+opacity: 0;
+}
+
+
 .mobileNavButtonShow {
-  width: 20%;
+  width: 100%;
   height: 2.5%;
   left: 50%;
   top: 0%;
   transform: translate(-50%);
   transition-duration: 0.3s;
-  clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
+  
 }
 .mobileNavButtonHide {
   width: 7%;
   height: 7%;
   left: 50%;
-  top: 9%;
+  top: 7%;
   transform: translate(-50%);
   transition-duration: 0.3s;
   clip-path: circle();
@@ -52,6 +61,8 @@
   clip-path: polygon(50% 100%, 0 0, 100% 0);
   height: 0.6rem;
   width: 1rem;
+  left: 45%;
+
 }
 
 .mobileNavButtonIconHide {
@@ -60,6 +71,8 @@
   clip-path: polygon(50% 0%, 0 100%, 100% 100%);
   height: 0.5rem;
   width: 0.8rem;
+  left: 50%;
+
 }
 
 .aboutShown {
@@ -153,9 +166,15 @@
     position: fixed;
     transition-property: top, left;
     transition-duration: 0.5s;
+    font-weight: bold;
   }
 
   #mobileNavButton {
     visibility: hidden;
+  }
+
+  .navElement:hover {
+    text-decoration: underline solid 4px;
+    text-underline-offset: 8px;
   }
 }

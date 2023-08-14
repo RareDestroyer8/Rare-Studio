@@ -40,14 +40,7 @@
     z-index: -10;
   }
 
-  #headerParallelogram {
-    top: -17.5%;
-    left: 0%;
-    height: 70%;
-    width: 100%;
 
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  }
 }
 
 @media (min-width: 0em) and (orientation: landscape) {
@@ -70,13 +63,7 @@
     z-index: -10;
   }
 
-  #headerParallelogram {
-    top: -17.5%;
-    left: 0%;
-    height: 70%;
-    width: 100%;
-    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  }
+
 }
 
 /* Desktop - 1024px*/
@@ -104,12 +91,5 @@
     white-space: nowrap;
   }
 
-  #headerParallelogram {
-    top: -17.5%;
-    left: -15%;
-    height: 125%;
-    width: 60%;
 
-    clip-path: polygon(12.5% 0, 100% 0%, 87.5% 100%, 0% 100%);
-  }
 }

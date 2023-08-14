@@ -1,0 +1,62 @@
+@media (min-width: 0rem) and (orientation: portrait){    #headerParallelogram {
+    top: 2%;
+    left: -12.5%;
+    height: 105%;
+    width: 125%;
+
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+  }}
+
+@media (min-width: 64rem) {
+     #pricingSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 41rem;
+    z-index: -12;
+    font-weight: bold;
+  }
+
+  #pricingHeader {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 5rem;
+    text-align: center;
+    margin: 0;
+  }
+
+    .pricings {
+    position: absolute;
+    color: rgb(255, 250, 250);
+    left: 50%;
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0;
+    width: 95%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #pricingText {
+
+    top: 205%;
+    background: center #a40528;
+    transform: translate(-50%);
+  }
+
+    #headerParallelogram {
+    top: -17.5%;
+    left: -15%;
+    height: 125%;
+    width: 130%;
+
+    clip-path: polygon(12.5% 0, 100% 0%, 87.5% 100%, 0% 100%);
+  }
+
+}

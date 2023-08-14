@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/Contact/contact.css" />
+    <link rel="stylesheet" href="/Global/header.css" />
+    <link rel="stylesheet" href="/Global/navigation.css" />
+  </head>
+  <body>
+      <section id="navigationBar">
+      <a href="/index.html" id="about" class="navElement">About</a>
+      <a href="/Pricing/pricing.html" id="pricing" class="navElement"
+        >lgrving</a
+      >
+      <a href="/Contact/contact.html" id="contact" class="navElement"
+        >Contact</a
+      >
+    </section>
+
+    <div id="mobileNavButton" onclick="mobileMenu()">
+      <div id="mobileNavButtonIcon"></div>
+      <div id="mobileNavMenuText">MENU</div>
+
+    </div>
+
+<div id="redBk"></div>
+
+<h1 id="headerContact">Contact Us</h1>
+<div id="fillFields">Please fill in the information below and we will contact you shortly</div>
+
+<form action="https://getform.io/f/d99ef6c3-6a26-428b-a35c-ff9b4f9fa766" method="POST">
+    <input type="text" name="name" id="name" placeholder="Name" required>
+    <div id="nameHeader" class="fieldHeader">Name</div>
+    <input type="email" name="email" id="email" placeholder="Email" required>
+    <div id="emailHeader" class="fieldHeader">Email</div>
+    <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" required>
+    <div id="telHeader" class="fieldHeader">Phone Number</div>
+
+    <input type="radio" name="preferredMethod" id="emailRadio" value="Email" required>
+
+    <input type="radio" name="preferredMethod" id="textMessageRadio" value="Phone" required>
+    <div id="preferredMethodContact" >Preferred Method of Contact</div>
+
+
+    <textarea name="text" cols="40" rows="50" id="message" placeholder="What type of website are you looking for? (Optional)"></textarea>
+    <div id="messageHeader" class="fieldHeader">Message</div>
+    <!-- add hidden Honeypot input to prevent spams -->
+    <input type="hidden" name="_gotcha" style="display:none !important">
+    <!-- select field handle -->
+    <button type="submit" id="submit">Send</button>
+</form>
+
+    <script src="/Global/main.js"></script>
+
+  </body>
+</html>

@@ -1,28 +1,62 @@
-let title = document.getElementById("header");
-
-var about = document.querySelector("#about");
-var pricing = document.querySelector("#pricing");
-var contact = document.querySelector("#contact");
-
-var mobileNavButton = document.querySelector("#mobileNavButton");
-var mobileNavButtonIcon = document.querySelector("#mobileNavButtonIcon");
-var mobileNavMenuText = document.querySelector("#mobileNavMenuText");
-
-var mobileNavigator = true;
+let pricingHeader = document.querySelector("#pricingHeader");
+let pricingTextOne = document.getElementById("pricingText");
 
 var i = 0;
 
-if (window.matchMedia("(min-width: 64rem)").matches) {
-  moveNavElements();
-} else {
-  mobileMenu();
-}
+var isSectionOneDone = false;
 
 addEventListener("scroll", (e) => {
   if (window.matchMedia("(min-width:64rem)").matches) {
+    title.style.marginTop = window.scrollY * 1.2 + "px";
+    //
+    //
+    if (window.scrollY < 515 && isSectionOneDone == false) {
+      // <515
+      pricingHeader.style.marginTop = window.scrollY * 1.2 + "px";
 
-    if (window.matchMedia("(min-width: 64rem)").matches) {
-      moveNavElements();
+      if (
+        window.scrollY > 380 && // >380 Desktop
+        window.matchMedia("(min-width: 64rem)").matches
+      ) {
+        //
+        pricingTextOne.style.marginTop = (window.scrollY - 380) * -3 + "px";
+        //
+      } else if (window.scrollY > 380) {
+        // >380 Mobile
+        pricingTextOne.style.marginTop =
+          (window.scrollY - 380) * -3 + 90 + "px";
+      }
+      //
+      //
+      //
+      if (
+        window.scrollY < 50 && // <50 Desktop
+        window.matchMedia("(min-width: 64rem)").matches
+      ) {
+        pricingTextOne.style.marginTop = (50 - 380) * -3 + "px";
+        //
+      } else if (window.scrollY < 50) {
+        // >50 Mobile
+        pricingTextOne.style.marginTop = (50 - 380) * -3 + 90 + "px";
+      }
+      //
+      //
+      //
+    } // >515
+    else {
+           isSectionOneDone = true;
+      pricingHeader.style.marginTop =
+        515 * 1.2 + (515 - window.scrollY) * 0.75 + "px";
+
+      pricingTextOne.style.left = 565 - 515 + "%";
+    
+      if (window.matchMedia("(min-width: 64rem)").matches) {
+        pricingTextOne.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+      } else {
+        pricingTextOne.style.marginTop =
+          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+      }
     }
   }
 });
