@@ -84,6 +84,7 @@ input[type="radio"]:checked {
     background-color: white;
     height: 2rem;
     border: 3px solid #555;
+    color: black;
   }
   #headerContact {
     position: absolute;
