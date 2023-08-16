@@ -7,7 +7,7 @@ html {
   /* Section 1 */
   #services {
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
     width: 100%;
     height: 41rem;
@@ -33,11 +33,14 @@ html {
     font-size: 1.7rem;
     text-align: center;
     margin: 0;
-    width: 99%;
+    width: 105%;
     display: flex;
     align-items: center;
     justify-content: center;
     transform: translate(-50%);
+    background-color: #ff002bbf;
+    border-radius: 25%;
+    height: 25rem;
   }
 
   #servicesMobileBackground {
@@ -47,24 +50,22 @@ html {
     transform: translate(-50%);
     height: 50rem;
     width: 90%;
-    background-color: #a40528;
   }
 
   #servicesTextOne {
-    top: 1rem;
+    top: 0rem;
   }
   #servicesTextTwo {
-    top: 13rem;
+    top: 30rem;
   }
   #servicesTextThree {
-    top: 30rem;
+    top: 60rem;
   }
 
   /* Section 2 */
   #whyUs {
     position: absolute;
-    top: 120.5rem;
-    left: 0px;
+    top: 100.5rem;
     width: 100%;
     height: 41rem;
     z-index: -12;
@@ -72,15 +73,17 @@ html {
 
   #whyUsHeader {
     position: absolute;
-    color: #d50a36;
-
-    top: 1rem;
+    color: #fff1f4;
+    background-color: #ff5100;
+    border-radius: 15px;
+    top: 0rem;
 
     font-size: 4rem;
     white-space: nowrap;
     text-align: center;
     margin: 0;
     font-weight: bold;
+    width: 80%;
   }
 
   #whyUsText {
@@ -89,20 +92,26 @@ html {
     top: 6.5rem;
 
     font-size: 1.6rem;
-    text-align: center;
     margin: 0;
     width: 80%;
     font-weight: 400;
     text-decoration: none;
     pointer-events: none;
-    
+  }
+  .whyUsTexts {
+    box-shadow: #ffffff 10px 0 0 0, #ffffff -20px 0 0 0, #ff6016 -30px 0 0 0,  #ff6016 20px 0 0 0;;
   }
 
-      .whyUsTextHeaders {
-    margin-left: -15px;
+  .whyUsTextHeaders {
+    margin-left: 0px;
     font-weight: bold;
     font-size: 1.7rem;
-    color: #c10e34;
+    color: #ff6016;
+    text-align: left;
+  }
+
+  .whyUsTextWritting {
+    text-align: center;
   }
 
   /* Section 3 */
@@ -192,7 +201,7 @@ html {
     transition-property: filter, transition, opcaity, left, box-shadow;
   }
 
-    #headerParallelogram {
+  #headerParallelogram {
     top: -17.5%;
     left: 0%;
     height: 70%;
@@ -280,7 +289,7 @@ html {
     font-weight: bold;
 
     top: -3%;
-  
+
     font-size: 5rem;
     white-space: nowrap;
     text-align: center;
@@ -290,15 +299,15 @@ html {
   #whyUsText {
     position: absolute;
     color: rgb(0, 0, 0);
-    top: 6.5rem;
+    top: 7.5rem;
     font-size: 1.4rem;
     text-align: left;
     margin: 0;
-    width: 40%;
+    width: 38%;
     font-weight: 500;
   }
 
-    .whyUsTextHeaders {
+  .whyUsTextHeaders {
     margin-left: -15px;
     font-weight: bold;
     font-size: 1.6rem;
@@ -344,11 +353,11 @@ html {
   #whyUsImg {
     position: absolute;
 
-    top: 0;
-    width: 40%;
-    height: 40rem;
+    top: -15%;
+    width: 60%;
+    height: 55rem;
     transition-duration: 0.5s;
-    background-image: url(/photo-1542831371-29b0f74f9713.jpg);
+    background-size: 500px;
   }
 
   .whyUsHeaderStart {
@@ -402,7 +411,7 @@ html {
     left: 50%;
     width: 80%;
     height: 50%;
-    filter:brightness(0);
+    filter: brightness(0);
   }
 
   .waitTextContainerTransition {
@@ -435,8 +444,7 @@ html {
   .whyUsImgHidden {
     opacity: 0;
     transform: scale(1.05);
-    filter: blur(16px);
-    box-shadow: 0 0 60px 20px rgb(81, 0, 0);
+    filter: saturate(0) blur(16px);
     left: 130%;
     transition-property: filter, transition, opcaity, left, box-shadow;
   }
@@ -444,8 +452,7 @@ html {
     opacity: 1;
     transform: scale(1);
     filter: blur(0px);
-    box-shadow: 0 0 30px 3px rgb(0, 0, 0);
-    left: 48%;
+    left: 39.5%;
     transition-property: filter, transition, opcaity, left, box-shadow;
   }
 

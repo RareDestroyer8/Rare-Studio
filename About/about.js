@@ -1,9 +1,9 @@
+let services = document.querySelector("#services");
 let servicesHeader = document.querySelector("#servicesHeader");
+let servicesTexts = document.querySelectorAll(".services");
 let servicesTextOne = document.getElementById("servicesTextOne");
 let servicesTextTwo = document.getElementById("servicesTextTwo");
 let servicesTextThree = document.getElementById("servicesTextThree");
-
-
 
 let whyUsHeader = document.querySelector("#whyUsHeader");
 let whyUsText = document.querySelector("#whyUsText");
@@ -28,21 +28,56 @@ var isSectionThreeDone = false;
 
 var i = 0;
 
+var isDesktop = true;
+console.log(servicesTexts)
+if (window.matchMedia("(min-width:64rem)").matches) {
+  isDesktop = true;
+} else {
+  isDesktop = false;
+}
 
 addEventListener("scroll", (e) => {
-  if (window.matchMedia("(min-width:64rem)").matches) {
-    console.log("hiii");
-    if (isSectionThreeDone == false && window.scrollY > 1600) {
-      isSectionThreeDone = true;
-      waitTextContainer.classList.remove("waitTextContainerStart");
-      waitTextContainer.classList.add("waitTextContainerTransition");
+  if (isDesktop) {
+    title.style.marginTop = window.scrollY * 1.2 + "px";
+    //Section 1--------------
+    if (window.scrollY < 515 && isSectionOneDone == false) {
+      // <515
+      servicesHeader.style.marginTop = window.scrollY * 1.2 + "px";
+      if (window.scrollY > 380) {
+        //
+        servicesTextOne.style.marginTop = (window.scrollY - 380) * -3 + "px";
+        servicesTextOne.style.left = 565 - window.scrollY + "%";
 
-      setTimeout(() => {
-        waitHeader.classList.remove("waitHeaderStart");
-        waitHeader.classList.add("waitHeaderTransition");
-      }, 250);
+        servicesTextTwo.style.marginTop = (window.scrollY - 380) * -3 + "px";
+        servicesTextTwo.style.left = -465 + window.scrollY + "%";
+
+        servicesTextThree.style.marginTop = (window.scrollY - 380) * -3 + "px";
+        servicesTextThree.style.left = 565 - window.scrollY + "%";
+        //
+      } else if (window.scrollY > 380) {
+        // ==========================
+        // >380 Mobile
+        servicesTextOne.style.marginTop =
+          (window.scrollY - 380) * -3 + 90 + "px";
+        servicesTextTwo.style.marginTop =
+          (window.scrollY - 380) * -3 + 90 + "px";
+        servicesTextThree.style.marginTop =
+          (window.scrollY - 380) * -3 + 90 + "px";
+      }
+      //
+      //
+      //
+      //
+    } // >515
+    else {
+      ServicesFinalDesktop();
     }
 
+    if (window.scrollY < 50) {
+      ServicesStartDesktop();
+    }
+
+    //Section 2---------------------
     if (window.scrollY > 950) {
       if (isSectionTwoDone == false) {
         whyUsHeader.classList.remove("whyUsHeaderStart");
@@ -62,86 +97,38 @@ addEventListener("scroll", (e) => {
       console.log("doing");
     }
 
-
     //
     console.log(window.scrollY);
+
+    //Section 3---------------------
+
+    console.log("hiii");
+    if (isSectionThreeDone == false && window.scrollY > 1600) {
+      isSectionThreeDone = true;
+      waitTextContainer.classList.remove("waitTextContainerStart");
+      waitTextContainer.classList.add("waitTextContainerTransition");
+
+      setTimeout(() => {
+        waitHeader.classList.remove("waitHeaderStart");
+        waitHeader.classList.add("waitHeaderTransition");
+      }, 250);
+    }
+
+    //
+    //
+  }
+
+  if (!isDesktop) {
     title.style.marginTop = window.scrollY * 1.2 + "px";
-    //
-    //
-    if (window.scrollY < 515 && isSectionOneDone == false) {
-      // <515
-      servicesHeader.style.marginTop = window.scrollY * 1.2 + "px";
+    if(window.scrollY>100){
+    services.style.marginTop = window.scrollY * -0.75 + 100 + "px";
 
-      //
-      if (
-        window.scrollY > 380 && // >380 Desktop
-        window.matchMedia("(min-width: 64rem)").matches
-      ) {
-        //
-        servicesTextOne.style.marginTop = (window.scrollY - 380) * -3 + "px";
-        servicesTextOne.style.left = 565 - window.scrollY + "%";
+    servicesTexts[0].style.marginTop = window.scrollY * -0.2 + 100 + "px";
+    servicesTexts[1].style.marginTop = window.scrollY * -0.275 + 100 + "px";
+    servicesTexts[2].style.marginTop = window.scrollY * -0.35 + 100 + "px";
 
-        servicesTextTwo.style.marginTop = (window.scrollY - 380) * -3 + "px";
-        servicesTextTwo.style.left = -465 + window.scrollY + "%";
+    
 
-        servicesTextThree.style.marginTop = (window.scrollY - 380) * -3 + "px";
-        servicesTextThree.style.left = 565 - window.scrollY + "%";
-        //
-      } else if (window.scrollY > 380) {
-        // >380 Mobile
-        servicesTextOne.style.marginTop =
-          (window.scrollY - 380) * -3 + 90 + "px";
-        servicesTextTwo.style.marginTop =
-          (window.scrollY - 380) * -3 + 90 + "px";
-        servicesTextThree.style.marginTop =
-          (window.scrollY - 380) * -3 + 90 + "px";
-      }
-      //
-      //
-      //
-      if (
-        window.scrollY < 50 && // <50 Desktop
-        window.matchMedia("(min-width: 64rem)").matches
-      ) {
-        servicesTextOne.style.marginTop = (50 - 380) * -3 + "px";
-        servicesTextTwo.style.marginTop = (50 - 380) * -3 + "px";
-        servicesTextThree.style.marginTop = (50 - 380) * -3 + "px";
-        //
-      } else if (window.scrollY < 50) {
-        // >50 Mobile
-        servicesTextOne.style.marginTop = (50 - 380) * -3 + 90 + "px";
-        servicesTextTwo.style.marginTop = (50 - 380) * -3 + 90 + "px";
-        servicesTextThree.style.marginTop = (50 - 380) * -3 + 90 + "px";
-      }
-      //
-      //
-      //
-    } // >515
-    else {
-      isSectionOneDone = true;
-      servicesHeader.style.marginTop =
-        515 * 1.2 + (515 - window.scrollY) * 0.75 + "px";
-
-
-      servicesTextOne.style.left = 565 - 515 + "%";
-      servicesTextTwo.style.left = 565 - 515 + "%";
-      servicesTextThree.style.left = 565 - 515 + "%";
-
-      if (window.matchMedia("(min-width: 64rem)").matches) {
-        servicesTextOne.style.marginTop =
-          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
-        servicesTextTwo.style.marginTop =
-          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
-        servicesTextThree.style.marginTop =
-          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
-      } else {
-        servicesTextOne.style.marginTop =
-          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
-        servicesTextTwo.style.marginTop =
-          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
-        servicesTextThree.style.marginTop =
-          (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
-      }
     }
   }
 });
@@ -165,74 +152,42 @@ function moveNavElements() {
   }
 }
 
-//Mobile
-function showMenu() {
-  mobileNavButton.classList.remove("mobileNavButtonShow");
-  mobileNavButtonIcon.classList.remove("mobileNavButtonIconShow");
-  mobileNavMenuText.classList.remove("mobileNavMenuTextShow");
+function ServicesFinalDesktop() {
+  isSectionOneDone = true;
+  servicesHeader.style.marginTop =
+    515 * 1.2 + (515 - window.scrollY) * 0.75 + "px";
 
-  mobileNavButton.classList.add("mobileNavButtonHide");
-  mobileNavButtonIcon.classList.add("mobileNavButtonIconHide");
-  mobileNavMenuText.classList.add("mobileNavMenuTextHide");
+  servicesTextOne.style.left = 565 - 515 + "%";
+  servicesTextTwo.style.left = 565 - 515 + "%";
+  servicesTextThree.style.left = 565 - 515 + "%";
 
-  about.classList.remove("aboutHidden");
-  pricing.classList.remove("pricingHidden");
-  contact.classList.remove("contactHidden");
-  about.classList.add("aboutShown");
-  pricing.classList.add("pricingShown");
-  contact.classList.add("contactShown");
-}
-
-function hideMenu() {
-  mobileNavButton.classList.remove("mobileNavButtonHide");
-  mobileNavButtonIcon.classList.remove("mobileNavButtonIconHide");
-  mobileNavMenuText.classList.remove("mobileNavMenuTextHide");
-
-  mobileNavButton.classList.add("mobileNavButtonShow");
-  mobileNavButtonIcon.classList.add("mobileNavButtonIconShow");
-  mobileNavMenuText.classList.add("mobileNavMenuTextShow");
-
-  about.classList.remove("aboutShown");
-  pricing.classList.remove("pricingShown");
-  contact.classList.remove("contactShown");
-  about.classList.add("aboutHidden");
-  pricing.classList.add("pricingHidden");
-  contact.classList.add("contactHidden");
-}
-
-function mobileMenu() {
-  if (mobileNavigator == true) {
-    mobileNavigator = false;
-    hideMenu();
-  } else if (mobileNavigator == false) {
-    mobileNavigator = true;
-    showMenu();
+  if (isDesktop) {
+    servicesTextOne.style.marginTop =
+      (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+    servicesTextTwo.style.marginTop =
+      (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+    servicesTextThree.style.marginTop =
+      (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + "px";
+  } else {
+    servicesTextOne.style.marginTop =
+      (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+    servicesTextTwo.style.marginTop =
+      (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
+    servicesTextThree.style.marginTop =
+      (515 - 380 - (515 - window.scrollY) * 0.25) * -3 + 90 + "px";
   }
 }
 
-function whyUsTextAppear() {
-  setTimeout(() => {
-    whyUsText.classList.remove("whyUsTextStart");
-
-    whyUsText.classList.add("whyUsTextTransition");
-  }, 300);
-}
-
-function whyUsLeft() {
-  setTimeout(() => {
-    whyUsHeader.classList.remove("whyUsCenter");
-    whyUsText.classList.remove("whyUsCenter");
-
-    whyUsHeader.classList.add("whyUsLeft");
-    whyUsText.classList.add("whyUsLeft");
-  }, 550);
-}
-
-function whyUsImgAppear() {
-  setTimeout(() => {
-    whyUsImg.classList.remove("whyUsImgHidden");
-
-    whyUsImg.classList.add("whyUsImgShown");
-    isWhyUsDone = false;
-  }, 700);
+function ServicesStartDesktop() {
+  if (isDesktop) {
+    servicesTextOne.style.marginTop = (50 - 380) * -3 + "px";
+    servicesTextTwo.style.marginTop = (50 - 380) * -3 + "px";
+    servicesTextThree.style.marginTop = (50 - 380) * -3 + "px";
+    //
+  } else {
+    // <50 Mobile
+    servicesTextOne.style.marginTop = (50 - 380) * -3 + 90 + "px";
+    servicesTextTwo.style.marginTop = (50 - 380) * -3 + 90 + "px";
+    servicesTextThree.style.marginTop = (50 - 380) * -3 + 90 + "px";
+  }
 }

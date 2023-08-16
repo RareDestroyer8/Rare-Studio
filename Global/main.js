@@ -12,15 +12,16 @@ var mobileNavigator = true;
 
 var i = 0;
 
-if (window.matchMedia("(min-width: 64rem)").matches) {
+if (window.matchMedia("(min-width:64rem)").matches) {
+  isDesktop = true;
   moveNavElements();
 } else {
+  isDesktop = false;
   mobileMenu();
 }
 
 addEventListener("scroll", (e) => {
   if (window.matchMedia("(min-width:64rem)").matches) {
-
     if (window.matchMedia("(min-width: 64rem)").matches) {
       moveNavElements();
     }
