@@ -39,7 +39,10 @@ if (window.matchMedia("(min-width:64rem)").matches) {
 
 addEventListener("scroll", (e) => {
   if (isDesktop) {
+    if(window.scrollY<800){
     title.style.marginTop = window.scrollY * 1.2 + "px";
+
+    }
     //Section 1--------------
     if (window.scrollY < 515 && isSectionOneDone == false) {
       // <515
@@ -120,7 +123,9 @@ addEventListener("scroll", (e) => {
   }
 
   if (!isDesktop) {
-    title.style.marginTop = window.scrollY * 1.2 + "px";
+        if (window.scrollY < 800) {
+          title.style.marginTop = window.scrollY * 1.2 + "px";
+        }
     if (window.scrollY > 100) {
       services.style.marginTop = window.scrollY * -0.75 + 100 + "px";
 
