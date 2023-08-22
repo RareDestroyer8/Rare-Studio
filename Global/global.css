@@ -9,11 +9,13 @@ html {
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
+overflow-x: hidden;
 }
 
 body {
   -ms-overflow-style: none;
   overflow-y: hidden;
+  overflow-x: hidden;
 
 
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -27,12 +29,6 @@ body {
     padding-right: min(0vmin, env(safe-area-inset-right));
   }
 }
-
-html,
-body {
-  overflow-x: hidden;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }

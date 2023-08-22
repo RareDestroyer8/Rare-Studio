@@ -8,9 +8,10 @@ let servicesTextThree = document.getElementById("servicesTextThree");
 let whyUsHeader = document.querySelector("#whyUsHeader");
 let whyUsText = document.querySelector("#whyUsText");
 let whyUsImg = document.querySelector("#whyUsImg");
+let whyUsTexts = document.querySelectorAll(".whyUsTexts");
 
 let waitHeader = document.querySelector("#waitHeader");
-let waitTextContainer = document.querySelector("#waitTextContainer");
+let wait = document.querySelector("#wait");
 
 var about = document.querySelector("#about");
 var pricing = document.querySelector("#pricing");
@@ -29,7 +30,7 @@ var isSectionThreeDone = false;
 var i = 0;
 
 var isDesktop = true;
-console.log(servicesTexts)
+console.log(servicesTexts);
 if (window.matchMedia("(min-width:64rem)").matches) {
   isDesktop = true;
 } else {
@@ -105,8 +106,8 @@ addEventListener("scroll", (e) => {
     console.log("hiii");
     if (isSectionThreeDone == false && window.scrollY > 1600) {
       isSectionThreeDone = true;
-      waitTextContainer.classList.remove("waitTextContainerStart");
-      waitTextContainer.classList.add("waitTextContainerTransition");
+      wait.classList.remove("waitStart");
+      wait.classList.add("waitTransition");
 
       setTimeout(() => {
         waitHeader.classList.remove("waitHeaderStart");
@@ -120,15 +121,40 @@ addEventListener("scroll", (e) => {
 
   if (!isDesktop) {
     title.style.marginTop = window.scrollY * 1.2 + "px";
-    if(window.scrollY>100){
-    services.style.marginTop = window.scrollY * -0.75 + 100 + "px";
+    if (window.scrollY > 100) {
+      services.style.marginTop = window.scrollY * -0.75 + 100 + "px";
 
-    servicesTexts[0].style.marginTop = window.scrollY * -0.2 + 100 + "px";
-    servicesTexts[1].style.marginTop = window.scrollY * -0.275 + 100 + "px";
-    servicesTexts[2].style.marginTop = window.scrollY * -0.35 + 100 + "px";
+      servicesTexts[0].style.marginTop = window.scrollY * -0.2 + 100 + "px";
+      servicesTexts[1].style.marginTop = window.scrollY * -0.275 + 100 + "px";
+      servicesTexts[2].style.marginTop = window.scrollY * -0.35 + 100 + "px";
+    }
+    switch (true) {
+      case window.scrollY > 1850:
+        whyUsTexts[3].classList.remove("hide");
+        whyUsTexts[3].classList.add("show");
+        console.log(window.scrollY);
+        break;
+      case window.scrollY > 1600:
+        whyUsTexts[2].classList.remove("hide");
+        whyUsTexts[2].classList.add("show");
+        break;
 
-    
+      case window.scrollY > 1350:
+        whyUsTexts[1].classList.remove("hide");
+        whyUsTexts[1].classList.add("show");
+        break;
 
+      case window.scrollY > 1050:
+        whyUsTexts[0].classList.remove("hide");
+        whyUsTexts[0].classList.add("show");
+
+        break;
+    }
+
+    if (window.scrollY > 2500) {
+      isSectionThreeDone = true;
+      wait.classList.remove("waitStart");
+      wait.classList.add("waitTransition");
     }
   }
 });

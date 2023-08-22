@@ -1,3 +1,8 @@
+body{
+  font-weight: bold;
+
+}
+
 #mobileNavButton {
   position: fixed;
   background-color: #e5001b;
@@ -20,6 +25,7 @@
   transform: translate(-50%, -50%);
   color: #69000c;
   z-index: 50;
+  font-weight: 600;
 
 }
 
@@ -35,10 +41,13 @@
 
 .mobileNavMenuTextShow {
  opacity: 1;
+  font-weight: 600;
   
 }
 .mobileNavMenuTextHide {
 opacity: 0;
+  font-weight: 600;
+
 }
 
 
@@ -49,6 +58,7 @@ opacity: 0;
   top: 0%;
   transform: translate(-50%);
   transition-duration: 0.3s;
+  font-weight: 600;
 
   
 }
@@ -85,9 +95,10 @@ opacity: 0;
 
 .aboutShown {
   top: 2%;
-  left: 25%;
+  left: 20%;
   transform: translate(-50%);
   transition-duration: 0.3s;
+  margin: 0;
 }
 
 .pricingShown {
@@ -95,13 +106,15 @@ opacity: 0;
   transform: translate(-50%);
   left: 50%;
   transition-duration: 0.2s;
+margin: 0;
 }
 
 .contactShown {
   top: 2%;
-  left: 75%;
+  left: 82%;
   transform: translate(-50%);
   transition-duration: 0.3s;
+  margin: 0;
 }
 
 .aboutHidden {
