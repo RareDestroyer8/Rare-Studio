@@ -30,7 +30,6 @@ var isSectionThreeDone = false;
 var i = 0;
 
 var isDesktop = true;
-console.log(servicesTexts);
 if (window.matchMedia("(min-width:64rem)").matches) {
   isDesktop = true;
 } else {
@@ -39,6 +38,8 @@ if (window.matchMedia("(min-width:64rem)").matches) {
 
 addEventListener("scroll", (e) => {
   if (isDesktop) {
+          console.log("change");
+
     if(window.scrollY<800){
     title.style.marginTop = window.scrollY * 1.2 + "px";
 
@@ -82,7 +83,7 @@ addEventListener("scroll", (e) => {
     }
 
     //Section 2---------------------
-    if (window.scrollY > 950) {
+    if (window.scrollY > 1000) {
       if (isSectionTwoDone == false) {
         whyUsHeader.classList.remove("whyUsHeaderStart");
 
@@ -95,10 +96,9 @@ addEventListener("scroll", (e) => {
       } else {
       }
     } else {
-      whyUsHeader.style.marginTop = (950 - window.scrollY) * 1 + "px";
-      whyUsText.style.marginTop = (950 - window.scrollY) * 1 + "px";
-      whyUsImg.style.marginTop = (950 - window.scrollY) * 1 + "px";
-      console.log("doing");
+      whyUsHeader.style.marginTop = (1000 - window.scrollY) * 1 + "px";
+      whyUsText.style.marginTop = (1000 - window.scrollY) * 1 + "px";
+      whyUsImg.style.marginTop = (1000 - window.scrollY) * 1 + "px";
     }
 
     //
@@ -106,7 +106,6 @@ addEventListener("scroll", (e) => {
 
     //Section 3---------------------
 
-    console.log("hiii");
     if (isSectionThreeDone == false && window.scrollY > 1600) {
       isSectionThreeDone = true;
       wait.classList.remove("waitStart");
@@ -137,7 +136,6 @@ addEventListener("scroll", (e) => {
       case window.scrollY > 1850:
         whyUsTexts[3].classList.remove("hide");
         whyUsTexts[3].classList.add("show");
-        console.log(window.scrollY);
         break;
       case window.scrollY > 1600:
         whyUsTexts[2].classList.remove("hide");

@@ -59,6 +59,10 @@
   #pricingText {
     top: 38rem;
   }
+      #whiteBackground{
+  height: 140rem;
+
+  }
 }
 
 @media (min-width: 64rem) {
@@ -110,5 +114,9 @@
     width: 130%;
 
     clip-path: polygon(12.5% 0, 100% 0%, 87.5% 100%, 0% 100%);
+  }
+      #whiteBackground{
+  height: 140rem;
+
   }
 }

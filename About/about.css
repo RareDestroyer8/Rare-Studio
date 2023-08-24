@@ -226,10 +226,12 @@ html {
   .waitStart {
     transition-duration: 0.5s;
     position: absolute;
-    top: 250rem;
+    top: 180rem;
     width: 80%;
     height: 50%;
     filter: brightness(0);
+    transform: scale(5);
+    opacity: 0;
   }
 
   .waitTransition {
@@ -238,6 +240,11 @@ html {
     top: 200rem;
     width: 80%;
     height: 50%;
+  }
+
+  #whiteBackground{
+  height: 205rem;
+
   }
 }
 
@@ -344,6 +351,11 @@ html {
     color: #c10e34;
   }
 
+  .whyUsTextWritting{
+    text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(255, 255, 255), -1px 1px 0 rgb(255, 255, 255), 1px 1px 0 rgb(255, 255, 255);
+
+  }
+
   #whyUsImg {
     position: absolute;
 
@@ -352,6 +364,7 @@ html {
     height: 55rem;
     transition-duration: 0.5s;
     background-size: 500px;
+    z-index: -5;
   }
 
   /* Section 3 */
@@ -457,7 +470,7 @@ html {
     opacity: 1;
     transform: scale(1);
     filter: blur(0px);
-    left: 39.5%;
+    left: 37.5%;
     transition-property: filter, transition, opcaity, left, box-shadow;
   }
 
@@ -468,5 +481,10 @@ html {
     width: 60%;
 
     clip-path: polygon(12.5% 0, 100% 0%, 87.5% 100%, 0% 100%);
+  }
+
+    #whiteBackground{
+  height: 140rem;
+
   }
 }

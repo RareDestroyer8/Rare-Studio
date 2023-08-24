@@ -12,6 +12,10 @@ var mobileNavigator = true;
 
 var i = 0;
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 if (window.matchMedia("(min-width:64rem)").matches) {
   isDesktop = true;
   moveNavElements();
