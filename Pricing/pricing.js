@@ -1,5 +1,5 @@
 let pricingSection = document.querySelector("#pricingSection");
-let pricingHeader = document.querySelector("#pricingHeader");
+let pricingHeader = document.querySelector("#pricingHeaderBackground");
 let pricingText = document.getElementById("pricingText");
 
 var i = 0;
@@ -62,17 +62,14 @@ addEventListener("scroll", (e) => {
     title.style.marginTop = window.scrollY * 1.2 + "px";
 
     if (window.scrollY > 100 && window.scrollY < 400) {
-      pricingSection.style.marginTop = window.scrollY * -0.75 + 100 + "px";
+      pricingSection.style.marginTop = window.scrollY * -0.45 + 100 + "px";
 
-      pricingText.style.marginTop = window.scrollY * -0.2 + 100 + "px";
     } else if (window.scrollY <= 100) {
-      pricingSection.style.marginTop = 100 * -0.75 + 100 + "px";
+      pricingSection.style.marginTop = 100 * -0.45 + 100 + "px";
 
-      pricingText.style.marginTop = 100 * -0.2 + 100 + "px";
     } else {
-      pricingSection.style.marginTop = 400 * -0.75 + 100 + "px";
+      pricingSection.style.marginTop = 400 * -0.45 + 100 + "px";
 
-      pricingText.style.marginTop = 400 * -0.2 + 100 + "px";
     }
   }
 });

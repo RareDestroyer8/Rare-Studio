@@ -122,7 +122,7 @@ addEventListener("scroll", (e) => {
   }
 
   if (!isDesktop) {
-        if (window.scrollY < 800) {
+        if (window.scrollY < 450) {
           title.style.marginTop = window.scrollY * 1.2 + "px";
         }
     if (window.scrollY > 100) {

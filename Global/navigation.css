@@ -53,18 +53,19 @@ opacity: 0;
 
 .mobileNavButtonShow {
   width: 100%;
-  height: 3.5%;
+  height: 4%;
   left: 50%;
   top: 0%;
   transform: translate(-50%);
   transition-duration: 0.3s;
   font-weight: 600;
+  margin: 0;
 
   
 }
 .mobileNavButtonHide {
   width: 9%;
-  height: 9%;
+  height: 4%;
   left: 50%;
   top: 9%;
   transform: translate(-50%);
@@ -87,8 +88,8 @@ opacity: 0;
   transition-duration: 0.15s;
 
   clip-path: polygon(50% 0%, 0 100%, 100% 100%);
-  height: 0.5rem;
-  width: 0.8rem;
+  height: 0.7rem;
+  width: 0.9rem;
   left: 50%;
 
 }
