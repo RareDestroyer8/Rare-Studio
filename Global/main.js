@@ -4,13 +4,15 @@ var about = document.querySelector("#about");
 var pricing = document.querySelector("#pricing");
 var contact = document.querySelector("#contact");
 
-var mobileNavButton = document.querySelector("#mobileNavButton");
+var mobileNavButton = document.getElementById("mobileNavButton");
 var mobileNavButtonIcon = document.querySelector("#mobileNavButtonIcon");
 var mobileNavMenuText = document.querySelector("#mobileNavMenuText");
 
 var mobileNavigator = true;
 
 var i = 0;
+
+mobileNavButton.style.backgroundColor = "#e5001b";
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
@@ -30,6 +32,15 @@ addEventListener("scroll", (e) => {
       moveNavElements();
     }
   }
+
+if(!isDesktop && window.scrollY<500){
+mobileNavButton.style.backgroundColor= "#e5001b";
+}
+else{
+mobileNavButton.style.backgroundColor = "orange";
+
+}
+
 });
 
 //Desktop
